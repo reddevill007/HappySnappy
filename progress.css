@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.my-skill{
+    display: grid;
+    height: 100%;
+    place-items: center;
+    background: linear-gradient(rgba(146, 137, 137, 0.5), #fff);
+    padding-bottom: 50px;
+}
+.skills-bar{
+    width: 600px;
+    background: linear-gradient(rgba(146, 137, 137, 0.5), #fff);
+    border-radius: 10px;
+    padding: 25px 30px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+.skills-bar .bar{
+    margin: 20px 0;
+}
+.skills-bar .bar:first-child{
+    margin-top: 0px;
+}
+.skills-bar .bar .info{
+    margin-bottom: 5px;
+}
+.skills-bar .bar .info span{
+    font-size: 17px;
+    font-weight: 500;
+    opacity: 0;
+    animation: showText1 0.5s 1s linear forwards;
+}
+@keyframes showText1{
+    100%{
+        opacity: 1;
+    }
+}
+.skills-bar .bar .progress-line{
+    position: relative;
+    height: 10px;
+    width: 100%;
+    background: #f0f0f0;
+    transform: scaleX(0);
+    transform-origin: left;
+    box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.05),
+                      0px 1px rgba(255, 255, 255, 0.8);
+    animation: animate 1s cubic-bezier(1,0,0.5,1) forwards;
+}
+.bar .progress-line span{
+    height: 100%;
+    width: 80%;
+    background: #4d0096;
+    position: absolute;
+    border-radius: 10px;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: animate 5s 1s cubic-bezier(1,0,0.5,1) forwards infinite;
+}
+@keyframes animate{
+    100%{
+        transform: scaleX(1);
+    }
+}
+.progress-line.html span{
+    width: 90%;
+}
+.progress-line.java span{
+    width: 60%;
+}
+.progress-line.css span{
+    width: 80%;
+}
+.progress-line.python span{
+    width: 70%;
+}
+.progress-line.clan span{
+    width: 40%;
+}
+.progress-line.cplus span{
+    width: 90%;
+}
+.bar .progress-line span::before{
+    position: absolute;
+    content: "";
+    right: 0;
+    top: -10px;
+    height: 0;
+    width: 0;
+    border: 7px solid transparent;
+    border-bottom-width: 0;
+    border-right-width: 0;
+    border-top-color: #000;
+    opacity: 0;
+    animation: showText2 0.5s 1.5s linear forwards;
+}
+@keyframes showText2{
+    100%{
+        opacity: 1;
+    }
+}
+.bar .progress-line span::after{
+    position: absolute;
+    right: 0;
+    top: -10px;
+    color: #fff;
+    background: #000;
+    font-weight: 500;
+    font-size: 12px;
+    padding: 1px 8px;
+    border-radius: 3px;
+}
+.progress-line.html span::after{
+    content: "90%";
+}
+.progress-line.java span::after{
+    content: "60%";
+}
+.progress-line.css span::after{
+    content: "80%";
+}
+.progress-line.python span::after{
+    content: "70%";
+}
+.progress-line.clan span::after{
+    content: "40%";
+}
+.progress-line.cplus span::after{
+    content: "90%";
+}
+@media screen and (max-width: 700px){
+    .skills-bar{
+        width: 300px;
+    }
+}
